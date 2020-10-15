@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>Mission to Mars</h1>
+        <!-- <button type="button" href="/scrape" class="btn btn-primary">Scrape New Data</button> -->
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Latest Mars News</h2>
+      <b>{{ mars_data.newest_link_title }}</b>
+      <p>{{ mars_data.newest_link_body }}</p>
+    </div>
+
+    <div class="container pt-3 mt-3">
+      <div class="row flex">
+          <div class="col-lg-8 ml-sm-auto px-md-4">
+            <h2>Featured Mars Image</h2>
+            <div>
+              <img class="img-thumbnail" src="{{ mars_data.featured_image_url }}">
+            </div>
+          </div>
+          <div class="col-lg-4 ml-sm-auto px-md-4">
+            <b>Mars Facts Table</b>
+            <div>
+              {{ mars_data.mars_facts_html_table_code | safe }}
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container pt-3 mt-3 pb-3 mb-3">
+      <!-- <div class="d-flex justify-content-between align-items-center pt-3 pb-3 mb-3 border-bottom"> -->
+      <div class="border-bottom">
+        <h4 class="text-center">Mars Hemispheres</h4>
+      </div>
+      <div class="row flex pt-3 mt-3 pb-3 mb-3">
+        <div class="col-md-6 ml-sm-auto px-md-4">
+          <!-- <a class="nav-link" href="Latitude_vs_MaxTemp.html"> -->
+            <div>
+              <img class="img-thumbnail" src="{{ mars_data.hemisphere_data[0].sample_img_url }}">
+              <b>{{ mars_data.hemisphere_data[0].title }}</b>
+            </div>
+          <!-- </a> -->
+        </div>
+        <div class="col-md-6 ml-sm-auto px-md-4">
+          <!-- <a class="nav-link" href="Latitude_vs_Humidity.html"> -->
+            <div>
+              <img class="img-thumbnail" src="{{ mars_data.hemisphere_data[1].sample_img_url }}">
+              <b>{{ mars_data.hemisphere_data[1].title }}</b>
+            </div>
+          <!-- </a> -->
+        </div>
+      </div>
+
+      <div class="row flex pt-3 mt-3 pb-3 mb-3">
+        <div class="col-md-6 ml-sm-auto px-md-4">
+          <!-- <a class="nav-link" href="Latitude_vs_Cloudiness.html"> -->
+            <div>
+              <img class="img-thumbnail" src="{{ mars_data.hemisphere_data[2].sample_img_url }}">
+              <b>{{ mars_data.hemisphere_data[2].title }}</b>
+            </div>
+            <!-- <img class="img-thumbnail" src="assets\images\Latitude_vs_Cloudiness.png"> -->
+          <!-- </a> -->
+        </div>
+        <div class="col-md-6 ml-sm-auto px-md-4">
+          <!-- <a class="nav-link" href="Latitude_vs_WindSpeed.html"> -->
+            <div>
+              <img class="img-thumbnail" src="{{ mars_data.hemisphere_data[3].sample_img_url }}">
+              <b>{{ mars_data.hemisphere_data[3].title }}</b>
+            </div>
+            <!-- <img class="img-thumbnail" src="assets\images\Latitude_vs_WindSpeed.png"> -->
+          <!-- </a> -->
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
