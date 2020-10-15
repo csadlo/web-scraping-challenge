@@ -73,7 +73,7 @@ def scrape():
     # Mars Facts - Challenge
     url = 'https://space-facts.com/mars/'
     browser.visit(url)
-    time.sleep(2)
+    time.sleep(1)
     soup = bs(browser.html, 'html.parser')
 
     mars_facts_df = pd.read_html('https://space-facts.com/mars/')[0]
@@ -93,7 +93,7 @@ def scrape():
 
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)
-    time.sleep(2)
+    time.sleep(1)
     soup = bs(browser.html, 'html.parser')
 
     # 8 items
